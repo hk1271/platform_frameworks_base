@@ -13,7 +13,8 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:sysui="http://schemas.android.com/apk/res-auto"
     android:id="@+id/volume_dialog"
     android:layout_width="match_parent"
@@ -22,11 +23,50 @@
     android:clipChildren="false"
     android:clipToPadding="false"
     android:orientation="vertical"
+    android:layout_gravity="end"
+    android:layout_alignParentEnd="true"
     android:paddingBottom="@dimen/volume_dialog_panel_transparent_padding"
     android:paddingLeft="@dimen/volume_dialog_panel_transparent_padding_left"
     android:paddingRight="@dimen/volume_dialog_panel_transparent_padding_left_right"
     android:paddingTop="@dimen/volume_dialog_panel_transparent_padding"
     android:theme="@style/qs_theme">
+
+    <com.android.systemui.bliss.MusicText
+        android:id="@+id/music_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:gravity="right"
+        android:layout_centerVertical="false"
+        android:layout_toRightOf="@id/volume_dialog" >
+
+        <TextView
+            android:id="@+id/artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:clickable="false"
+            android:focusable="false"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:translationZ="@dimen/volume_dialog_elevation"
+            android:textSize="22dp"
+            android:layout_below="@id/title" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:paddingTop="12dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:translationZ="@dimen/volume_dialog_elevation"
+            android:textSize="22dp" />
+
+    </com.android.systemui.bliss.MusicText>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -222,4 +262,4 @@
                 android:layout="@layout/volume_tool_tip_view" />
         </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>
