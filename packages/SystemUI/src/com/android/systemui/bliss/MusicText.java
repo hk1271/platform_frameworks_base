@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2020 SynthOS
+* Copyright (C) 2020 BissOS
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.android.systemui.synth;
+package com.android.systemui.bliss;
 
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
@@ -124,7 +124,7 @@ public class MusicText extends RelativeLayout implements NotificationMediaManage
      TextView artist = (TextView) findViewById(R.id.artist);
 
      boolean show = Settings.System.getIntForUser(mContext.getContentResolver(),
-             Settings.System.SYNTHOS_MUSIC_VOLUME_PANEL_TEXT, 1, UserHandle.USER_CURRENT) != 0;
+             Settings.System.BLISS_MUSIC_VOLUME_PANEL_TEXT, 1, UserHandle.USER_CURRENT) != 0;
 
       if (mMediaManager != null && mMediaTitle !=  null && mMediaArtist != null) {
         title.setText(mMediaTitle.toString());
